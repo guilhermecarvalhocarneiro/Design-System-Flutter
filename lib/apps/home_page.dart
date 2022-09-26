@@ -18,14 +18,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       bottomNavigationBar: _buildCupertinoTabBar(),
     );
   }
 
   Widget _buildCupertinoTabBar() {
     return CupertinoTabScaffold(
-        resizeToAvoidBottomInset: false,
         tabBar: CupertinoTabBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home)),
@@ -41,25 +39,23 @@ class _HomePageState extends State<HomePage> {
           switch (index) {
             case 0:
               return CupertinoTabView(
-                builder: (context) => const CupertinoPageScaffold(child: NuvolsDashboardPage()),
+                builder: (context) => const NuvolsDashboardPage(),
               );
             case 1:
               return CupertinoTabView(
-                builder: (context) =>
-                    const CupertinoPageScaffold(child: Scaffold(body: Center(child: Text("Financeiro")))),
+                builder: (context) => const Scaffold(body: Center(child: Text("Financeiro"))),
               );
             case 2:
               return CupertinoTabView(
-                builder: (context) => const CupertinoPageScaffold(child: Scaffold(body: Center(child: Text("Agenda")))),
+                builder: (context) => const Scaffold(body: Center(child: Text("Agenda"))),
               );
             case 3:
               return CupertinoTabView(
-                builder: (context) =>
-                    const CupertinoPageScaffold(child: Scaffold(body: Center(child: Text("Clientes")))),
+                builder: (context) => const Scaffold(body: Center(child: Text("Clientes"))),
               );
             default:
               return CupertinoTabView(
-                builder: (context) => const CupertinoPageScaffold(child: Scaffold(body: Center(child: Text("Perfil")))),
+                builder: (context) => const Scaffold(body: Center(child: Text("Perfil"))),
               );
           }
         });

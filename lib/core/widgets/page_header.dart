@@ -12,35 +12,37 @@ class NuvolsPageHeader extends StatefulWidget {
 class _NuvolsPageHeaderState extends State<NuvolsPageHeader> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Titulo(texto: "Consultorio Web"),
-            IconButton(
-                constraints: BoxConstraints(
-                  maxHeight: 24,
-                ),
-                onPressed: null,
-                icon: Icon(
-                  Icons.ring_volume,
-                  size: 18,
-                ))
-          ],
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            SubTitulo(texto: "Seja bem vindo,"),
-            TextoMedio(texto: "Usuário Xpto"),
-          ],
-        ),
-      ],
+    return SliverToBoxAdapter(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Titulo(texto: "Sistema Xpto"),
+              IconButton(
+                  constraints: BoxConstraints(
+                    maxHeight: 24,
+                  ),
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.ring_volume,
+                    size: 18,
+                  ))
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              SubTitulo(texto: "Seja bem vindo,"),
+              TextoMedio(texto: "Usuário Xpto"),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
