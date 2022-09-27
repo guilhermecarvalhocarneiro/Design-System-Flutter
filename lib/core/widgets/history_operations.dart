@@ -18,7 +18,7 @@ class _NuvolsHistoryOperationsState extends State<NuvolsHistoryOperations> {
       child: SizedBox(
         height: 125,
         child: ListView.builder(
-          itemCount: 8,
+          itemCount: 4,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
             final item = mockData[index];

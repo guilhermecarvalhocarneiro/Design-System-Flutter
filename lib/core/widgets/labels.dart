@@ -206,3 +206,49 @@ class TitleHistoryOperationHomePage extends StatelessWidget {
     ));
   }
 }
+
+class TitlePromotionsHomePage extends StatelessWidget {
+  const TitlePromotionsHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverToBoxAdapter(
+        child: Padding(
+      padding: EdgeInsets.only(top: 12.0, bottom: 8),
+      child: TituloSecao(texto: "Promoções"),
+    ));
+  }
+}
+
+class TitlePromotionCard extends StatelessWidget {
+  final String texto;
+  const TitlePromotionCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 24
+          ),
+    );
+  }
+}
+
+class SubTitlePromotionCard extends StatelessWidget {
+  final String texto;
+  const SubTitlePromotionCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+    );
+  }
+}

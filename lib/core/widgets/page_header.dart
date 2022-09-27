@@ -1,3 +1,4 @@
+import 'package:design_pinterest/core/labels.dart';
 import 'package:flutter/material.dart';
 
 import 'labels.dart';
@@ -21,7 +22,7 @@ class _NuvolsPageHeaderState extends State<NuvolsPageHeader> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
-              Titulo(texto: "Sistema Xpto"),
+              Titulo(texto: nomeAplicacao),
               IconButton(
                   constraints: BoxConstraints(
                     maxHeight: 24,
