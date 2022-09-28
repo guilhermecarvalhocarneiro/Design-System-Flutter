@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'apps/home_page.dart';
 import 'core/custom_themedata.dart';
+import 'core/labels.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent),
     );
     return MaterialApp(
-      title: 'Design Pinterest',
+      title: nomeAplicacao,
       theme: customThemeData,
       home: const HomePage(),
       debugShowCheckedModeBanner: false,

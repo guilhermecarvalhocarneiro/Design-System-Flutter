@@ -14,19 +14,17 @@ class NuvolsDashboardPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.only(top: kToolbarHeight * .70, bottom: 55),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: CustomScrollView(
-            slivers: [
-              NuvolsPageHeader(),
-              TitleGridHomePage(),
-              NuvolsGridHomePage(),
-              TitleHistoryOperationHomePage(),
-              NuvolsHistoryOperations(),
-              TitlePromotionsHomePage(),
-              NuvolsPromotionCardHomePage(),
-            ],
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: const CustomScrollView(
+          slivers: [
+            NuvolsPageHeader(),
+            TitleGridHomePage(),
+            NuvolsGridHomePage(),
+            TitleHistoryOperationHomePage(),
+            NuvolsHistoryOperations(),
+            TitlePromotionsHomePage(),
+            NuvolsPromotionCardHomePage(),
+          ],
         ),
       ),
     );

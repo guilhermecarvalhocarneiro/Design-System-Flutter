@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design_pinterest/core/mock_data/promotions.dart';
 import 'package:design_pinterest/core/widgets/labels.dart';
 import 'package:flutter/material.dart';
@@ -29,18 +30,20 @@ class _NuvolsPromotionCardHomePageState extends State<NuvolsPromotionCardHomePag
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 125,
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(6.5),
-                    topRight: Radius.circular(6.5),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(6.5),
+                      topRight: Radius.circular(
+                        6.5,
+                      )),
+                  child: CachedNetworkImage(
+                    imageUrl: item['image'],
+                    placeholder: (context, url) => const Center(child: LoadingText()),
+                    fit: BoxFit.cover,
                   ),
-                ),
-                child: Image.network(
-                  item['image'],
-                  fit: BoxFit.cover
                 ),
               ),
               Padding(
@@ -49,7 +52,7 @@ class _NuvolsPromotionCardHomePageState extends State<NuvolsPromotionCardHomePag
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, top: 4),
-                child: SubTitlePromotionCard(texto:item['valor'] ?? ""),
+                child: SubTitlePromotionCard(texto: item['valor'] ?? ""),
               ),
             ],
           ),

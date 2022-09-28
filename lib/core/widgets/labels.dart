@@ -228,11 +228,10 @@ class TitlePromotionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            fontSize: 24
-          ),
+      style: Theme.of(context)
+          .textTheme
+          .displaySmall
+          ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 24),
     );
   }
 }
@@ -249,6 +248,92 @@ class SubTitlePromotionCard extends StatelessWidget {
             color: Colors.white,
             fontWeight: FontWeight.w600,
           ),
+    );
+  }
+}
+
+class TitlePetshopPage extends StatelessWidget {
+  const TitlePetshopPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.only(top: 12.0, bottom: 8),
+        child: TituloSecao(texto: "Confirma os pet's parceiros"),
+      ),
+    );
+  }
+}
+
+class PetshopNameCard extends StatelessWidget {
+  final String texto;
+  const PetshopNameCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: const TextStyle(color: Colors.white, fontSize: 28),
+    );
+  }
+}
+
+class PetshopAddressCard extends StatelessWidget {
+  final String texto;
+  const PetshopAddressCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: const TextStyle(color: Colors.white, fontSize: 14),
+    );
+  }
+}
+
+class PetshopEmailCard extends StatelessWidget {
+  final String texto;
+  const PetshopEmailCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: const TextStyle(color: Colors.white, fontSize: 14),
+    );
+  }
+}
+
+class PetshopPhoneCard extends StatelessWidget {
+  final String texto;
+  const PetshopPhoneCard({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: const TextStyle(color: Colors.white, fontSize: 14),
+    );
+  }
+}
+
+class LoadingText extends StatelessWidget {
+  final Color cor;
+  const LoadingText({
+    super.key,
+    this.cor = Colors.white,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "carregando ... ",
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+      ),
     );
   }
 }

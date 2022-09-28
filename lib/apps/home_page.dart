@@ -1,4 +1,5 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
+import 'package:design_pinterest/apps/petsshops_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         tabBar: CupertinoTabBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home)),
-            BottomNavigationBarItem(icon: Icon(Icons.monetization_on_rounded)),
+            BottomNavigationBarItem(icon: Icon(Icons.pets)),
             BottomNavigationBarItem(icon: Icon(Icons.calendar_month)),
             BottomNavigationBarItem(icon: Icon(Icons.person_add_alt)),
             BottomNavigationBarItem(icon: Icon(Icons.person_off_outlined)),
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               );
             case 1:
               return CupertinoTabView(
-                builder: (context) => const Scaffold(body: Center(child: Text("Financeiro"))),
+                builder: (context) => const PetshopPage(),
               );
             case 2:
               return CupertinoTabView(

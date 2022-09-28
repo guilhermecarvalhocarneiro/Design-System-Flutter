@@ -15,4 +15,5 @@ class CustomColors {
   static const Color yellowCardIndex = Color(0xfff7f6cf);
   static const Color vanillaIceCardIndex = Color(0xfff5e2e4);
   static const Color chatelleCardIndex = Color(0xffbeb4c5);
+  static const Color bluePetshopBackgroundCard = Color(0xff9FC9F3);
 }
