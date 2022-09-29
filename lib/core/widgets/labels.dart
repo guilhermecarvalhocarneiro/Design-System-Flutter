@@ -99,7 +99,10 @@ class _TextoMedio extends State<TextoMedio> {
 
 class TextoPequeno extends StatefulWidget {
   final String texto;
-  const TextoPequeno({super.key, required this.texto});
+  const TextoPequeno({
+    super.key,
+    required this.texto,
+  });
 
   @override
   State<TextoPequeno> createState() => _TextoPequeno();
@@ -295,7 +298,6 @@ class TitlePetShopNameDetailPage extends StatelessWidget {
   }
 }
 
-
 class TitlePetShopEmailDetailPage extends StatelessWidget {
   final String petShopEmail;
   const TitlePetShopEmailDetailPage({super.key, required this.petShopEmail});
@@ -329,6 +331,25 @@ class PetshopAddressCard extends StatelessWidget {
       texto,
       style: const TextStyle(color: Colors.white, fontSize: 14),
     );
+  }
+}
+
+class PethShopAboutText extends StatelessWidget {
+  final String texto;
+  const PethShopAboutText({super.key, required this.texto});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextoPequeno(texto: texto);
+  }
+}
+
+class PetShopListServicesDetailPage extends StatelessWidget {
+  const PetShopListServicesDetailPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const TituloSecao(texto: "Confira nossa lista de serviços");
   }
 }
 
