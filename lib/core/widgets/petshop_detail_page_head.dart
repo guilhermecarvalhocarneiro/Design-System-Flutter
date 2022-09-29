@@ -1,4 +1,5 @@
 import 'package:design_pinterest/core/colors.dart';
+import 'package:design_pinterest/core/mock_data/petshop_header_image.dart';
 import 'package:flutter/material.dart';
 
 class PetShopHead extends StatelessWidget {
@@ -11,10 +12,9 @@ class PetShopHead extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: CustomBackgroundColors.gradientPetshopCard,
-        image: const DecorationImage(
+        image: DecorationImage(
           alignment: Alignment.bottomRight,
-          image: AssetImage(
-            "assets/images/petshops/img-1.png"
+          image: AssetImage(PetshopHeaderImage.getRandomImage
           ),
         ),
       ),

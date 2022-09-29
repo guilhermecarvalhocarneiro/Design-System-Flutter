@@ -1,7 +1,5 @@
-import 'package:design_pinterest/core/widgets/page_header.dart';
 import 'package:flutter/material.dart';
 
-import '../core/widgets/labels.dart';
 import '../core/widgets/petshop_detail_page_head.dart';
 import '../core/widgets/petshop_white_container.dart';
 
@@ -21,12 +19,22 @@ class _PetShopDetailPageState extends State<PetShopDetailPage> {
         children: [
           const PetShopHead(),
           Container(
-            margin: const EdgeInsets.only(top: kToolbarHeight * .70, bottom: 55),
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * .12, bottom: 55),
             child: const CustomScrollView(
               slivers: [
-                NuvolsPageHeader(padding: 12,),
                 PetShopWhiteCardOverHeader(),
               ],
+            ),
+          ),
+          Positioned(
+            top: 25,
+            left: 8,
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.chevron_left,
+                size: 32,
+              ),
             ),
           ),
         ],
