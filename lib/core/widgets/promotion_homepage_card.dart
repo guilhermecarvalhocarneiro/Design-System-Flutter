@@ -24,7 +24,7 @@ class _NuvolsPromotionCardHomePageState extends State<NuvolsPromotionCardHomePag
           margin: const EdgeInsets.only(bottom: 18),
           width: double.infinity,
           decoration: BoxDecoration(
-            color: CustomColors.greenCardIndex,
+            gradient: CustomBackgroundColors.gradientPetshopCard,
             borderRadius: BorderRadius.circular(6.5),
           ),
           child: Column(

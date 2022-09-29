@@ -4,6 +4,25 @@ import 'package:flutter/material.dart';
 
 import '../colors.dart';
 
+class TitlePage extends StatelessWidget {
+  final String texto;
+  const TitlePage({
+    super.key,
+    required this.texto,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontSize: 18,
+            color: CustomColors.labelText,
+          ),
+    );
+  }
+}
+
 class Titulo extends StatefulWidget {
   final String texto;
   const Titulo({super.key, required this.texto});
@@ -54,7 +73,7 @@ class _TituloSecaoState extends State<TituloSecao> {
     return Text(
       widget.texto,
       style: Theme.of(context).textTheme.displaySmall?.copyWith(
-            color: CustomColors.grayTwo,
+            color: CustomColors.labelText,
           ),
     );
   }
@@ -260,9 +279,30 @@ class TitlePetshopPage extends StatelessWidget {
     return const SliverToBoxAdapter(
       child: Padding(
         padding: EdgeInsets.only(top: 12.0, bottom: 8),
-        child: TituloSecao(texto: "Confirma os pet's parceiros"),
+        child: TitlePage(texto: "Confirma os pet's parceiros"),
       ),
     );
+  }
+}
+
+class TitlePetShopNameDetailPage extends StatelessWidget {
+  final String petshopName;
+  const TitlePetShopNameDetailPage({super.key, required this.petshopName});
+
+  @override
+  Widget build(BuildContext context) {
+    return TitlePage(texto: petshopName);
+  }
+}
+
+
+class TitlePetShopEmailDetailPage extends StatelessWidget {
+  final String petShopEmail;
+  const TitlePetShopEmailDetailPage({super.key, required this.petShopEmail});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextoPequeno(texto: petShopEmail);
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:design_pinterest/core/routers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: nomeAplicacao,
       theme: customThemeData,
       home: const HomePage(),
+      onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
     );
   }
