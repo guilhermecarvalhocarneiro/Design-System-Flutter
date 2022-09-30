@@ -4,28 +4,27 @@ import 'package:flutter/material.dart';
 
 import '../core/widgets/page_header.dart';
 
-class PetshopPage extends StatefulWidget {
-  const PetshopPage({super.key});
+class PetShopsListPage extends StatefulWidget {
+  const PetShopsListPage({super.key});
 
   @override
-  State<PetshopPage> createState() => _PetshopPageState();
+  State<PetShopsListPage> createState() => _PetShopsListPageState();
 }
 
-class _PetshopPageState extends State<PetshopPage> {
+class _PetShopsListPageState extends State<PetShopsListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.only(top: kToolbarHeight * .70, bottom: 55),
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: const CustomScrollView(
-          slivers: [
-            NuvolsPageHeader(),
-            TitlePetshopPage(),
-            NuvolsCustomListItens()
-          ],
-        ),
-    )
-    );
+        body: Container(
+      margin: const EdgeInsets.only(top: kToolbarHeight * .70, bottom: 55),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: const CustomScrollView(
+        slivers: [
+          NuvolsPageHeader(),
+          TitlePetshopPage(),
+          NuvolsCustomListItens(),
+        ],
+      ),
+    ));
   }
 }

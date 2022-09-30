@@ -16,4 +16,24 @@ class CustomColors {
   static const Color vanillaIceCardIndex = Color(0xfff5e2e4);
   static const Color chatelleCardIndex = Color(0xffbeb4c5);
   static const Color bluePetshopBackgroundCard = Color(0xff9FC9F3);
+  static const Color backgroundButtonOrange = Color(0xffff9433);
+  static const Color navigatorButtomActive = Color(0xffff9433);
+  static const Color navigatorButtomInactive = Color(0xffcccccc);
+  static const Color labelText = Color(0xff636363);
+  static const Color yellowInitialBackground = Color(0xffFFD074);
+  static const Color yellowFinalBackground = Color(0xffff9433);
+}
+
+class CustomBackgroundColors {
+  CustomBackgroundColors._();
+  static LinearGradient get gradientPetshopCard {
+    return const LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        CustomColors.yellowInitialBackground,
+        CustomColors.yellowFinalBackground,
+      ],
+    );
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
 import 'package:design_pinterest/apps/petsshops_page.dart';
+import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,8 @@ class _HomePageState extends State<HomePage> {
   Widget _buildCupertinoTabBar() {
     return CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
+          activeColor: CustomColors.navigatorButtomActive,
+          inactiveColor: CustomColors.navigatorButtomInactive,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home)),
             BottomNavigationBarItem(icon: Icon(Icons.pets)),
@@ -44,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               );
             case 1:
               return CupertinoTabView(
-                builder: (context) => const PetshopPage(),
+                builder: (context) => const PetShopsListPage(),
               );
             case 2:
               return CupertinoTabView(
