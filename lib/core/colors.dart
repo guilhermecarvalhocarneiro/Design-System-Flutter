@@ -20,6 +20,8 @@ class CustomColors {
   static const Color navigatorButtomActive = Color(0xffff9433);
   static const Color navigatorButtomInactive = Color(0xffcccccc);
   static const Color labelText = Color(0xff636363);
+  static const Color yellowInitialBackground = Color(0xffFFD074);
+  static const Color yellowFinalBackground = Color(0xffff9433);
 }
 
 class CustomBackgroundColors {
@@ -29,8 +31,8 @@ class CustomBackgroundColors {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        Color(0xffFFD074),
-        Color(0xffff9433),
+        CustomColors.yellowInitialBackground,
+        CustomColors.yellowFinalBackground,
       ],
     );
   }

@@ -29,7 +29,7 @@ class _PetShopDetailPageState extends State<PetShopDetailPage> {
             child: const CustomScrollView(
               slivers: [
                 PetShopWhiteCardOverHeader(),
-                PetShopListServices()
+                PetShopListServices(),
               ],
             ),
           ),

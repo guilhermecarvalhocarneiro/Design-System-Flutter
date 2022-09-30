@@ -1,3 +1,5 @@
+import 'package:design_pinterest/core/mock_data/mock_data.dart';
+import 'package:design_pinterest/core/widgets/petshop_card_service.dart';
 import 'package:flutter/material.dart';
 
 class PetShopListServices extends StatefulWidget {
@@ -13,15 +15,20 @@ class _PetShopListServicesState extends State<PetShopListServices> {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return Container(
-            padding: const EdgeInsets.all(0),
-            margin: const EdgeInsets.all(0),
-            width: double.infinity,
-            height: 85,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Text("Item $index"),
+          return Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 220,
+                color: Colors.white,
+              ),
+              PetshopCardService(
+                serviceName: NuvolsCoreMockData.gerarPalavras(2),
+                serviceDescription: NuvolsCoreMockData.gerarPalavras(12),
+                servicePrice: double.tryParse(NuvolsCoreMockData.gerarNumeros(2).toString()) ?? 0.00,
+                serviceTime: int.tryParse(NuvolsCoreMockData.gerarNumeros(2)) ?? 10,
+              ),
+            ],
           );
         },
         childCount: 50,
