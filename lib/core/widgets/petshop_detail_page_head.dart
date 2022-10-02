@@ -7,17 +7,32 @@ class PetShopHead extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * .45,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        gradient: CustomBackgroundColors.gradientPetshopCard,
-        image: DecorationImage(
-          alignment: Alignment.bottomRight,
-          image: AssetImage(PetshopHeaderImage.getRandomImage
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: CustomBackgroundColors.gradientPetshopCard,
+            image: DecorationImage(
+              alignment: Alignment.bottomRight,
+              image: AssetImage(PetshopHeaderImage.getRandomImage),
+            ),
           ),
         ),
-      ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: 25,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(38),
+                topRight: Radius.circular(38),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

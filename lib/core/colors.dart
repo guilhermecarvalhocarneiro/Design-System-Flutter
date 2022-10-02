@@ -36,4 +36,14 @@ class CustomBackgroundColors {
       ],
     );
   }
+  static LinearGradient get gradientAppBarPetshop {
+    return const LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+        CustomColors.yellowInitialBackground,
+        CustomColors.yellowFinalBackground,
+      ],
+    );
+  }
 }
