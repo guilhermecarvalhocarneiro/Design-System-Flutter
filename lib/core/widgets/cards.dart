@@ -3,6 +3,7 @@ import 'package:design_pinterest/apps/petshop_detail_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../apps/petshop_detail_page_sliver.dart';
 import '../mock_data/mock_data.dart';
 import 'labels.dart';
 
@@ -101,7 +102,7 @@ class _NuvolsPetshopCardState extends State<NuvolsPetshopCard> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const PetShopDetailPage(),
+            builder: (context) => const PetShopDetailPageSliver(),
           ),
         );
       },
