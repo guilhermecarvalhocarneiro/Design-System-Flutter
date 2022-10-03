@@ -26,10 +26,12 @@ class _PetShopDetailPageState extends State<PetShopDetailPage> {
               top: MediaQuery.of(context).size.height * .12,
               bottom: 55,
             ),
-            child: const CustomScrollView(
+            child: CustomScrollView(
               slivers: [
-                PetShopWhiteCardOverHeader(),
-                PetShopListServices(),
+                const PetShopWhiteCardOverHeader(),
+                PetShopListServices(
+                  addRemoveService: (value){},
+                ),
               ],
             ),
           ),

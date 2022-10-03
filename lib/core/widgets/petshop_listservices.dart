@@ -1,9 +1,11 @@
-import 'package:design_pinterest/core/mock_data/mock_data.dart';
-import 'package:design_pinterest/core/widgets/petshop_card_service.dart';
 import 'package:flutter/material.dart';
 
+import '../mock_data/mock_data.dart';
+import 'petshop_card_service.dart';
+
 class PetShopListServices extends StatefulWidget {
-  const PetShopListServices({super.key});
+  final Function(String) addRemoveService;
+  const PetShopListServices({super.key, required this.addRemoveService});
 
   @override
   State<PetShopListServices> createState() => _PetShopListServicesState();
@@ -15,6 +17,8 @@ class _PetShopListServicesState extends State<PetShopListServices> {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
+          final serviceName = NuvolsCoreMockData.gerarPalavras(2);
+          final serviceID = NuvolsCoreMockData.gerarNumeros(50);
           return Stack(
             children: [
               Container(
@@ -22,11 +26,16 @@ class _PetShopListServicesState extends State<PetShopListServices> {
                 height: 220,
                 color: Colors.white,
               ),
-              PetshopCardService(
-                serviceName: NuvolsCoreMockData.gerarPalavras(2),
-                serviceDescription: NuvolsCoreMockData.gerarPalavras(12),
-                servicePrice: double.tryParse(NuvolsCoreMockData.gerarNumeros(2).toString()) ?? 0.00,
-                serviceTime: int.tryParse(NuvolsCoreMockData.gerarNumeros(2)) ?? 10,
+              GestureDetector(
+                onTap: () {
+                  widget.addRemoveService(serviceID.toString());
+                },
+                child: PetshopCardService(
+                  serviceName: serviceName,
+                  serviceDescription: NuvolsCoreMockData.gerarPalavras(12),
+                  servicePrice: double.tryParse(NuvolsCoreMockData.gerarNumeros(2).toString()) ?? 0.00,
+                  serviceTime: int.tryParse(NuvolsCoreMockData.gerarNumeros(2)) ?? 10,
+                ),
               ),
             ],
           );

@@ -25,7 +25,7 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
     return Container(
       margin: const EdgeInsets.only(left: 8, right: 8),
       decoration: BoxDecoration(
-        color: CustomColors.yellowFinalBackground,
+        color: CustomColors.yellowInitialBackground,
         borderRadius: BorderRadius.circular(12.2),
       ),
       child: Padding(

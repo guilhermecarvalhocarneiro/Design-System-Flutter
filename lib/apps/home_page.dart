@@ -36,7 +36,6 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(icon: Icon(Icons.person_add_alt)),
             BottomNavigationBarItem(icon: Icon(Icons.person_off_outlined)),
           ],
-          backgroundColor: Colors.transparent,
           border: const Border(),
         ),
         tabBuilder: (context, index) {
