@@ -2,17 +2,21 @@ import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class PetshopCardService extends StatefulWidget {
+  final String serviceID;
   final String serviceName;
   final String serviceDescription;
   final double servicePrice;
   final int serviceTime;
+  final bool selected;
 
   const PetshopCardService({
     super.key,
+    required this.serviceID,
     required this.serviceName,
     required this.serviceDescription,
     required this.servicePrice,
     required this.serviceTime,
+    this.selected = false,
   });
 
   @override
@@ -25,7 +29,7 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
     return Container(
       margin: const EdgeInsets.only(left: 8, right: 8),
       decoration: BoxDecoration(
-        color: CustomColors.yellowInitialBackground,
+        color: widget.selected ? Colors.blueGrey : CustomColors.yellowInitialBackground,
         borderRadius: BorderRadius.circular(12.2),
       ),
       child: Padding(

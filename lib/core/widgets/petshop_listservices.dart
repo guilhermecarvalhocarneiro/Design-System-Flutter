@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../mock_data/mock_data.dart';
+import '../nuvols_logger.dart';
 import 'petshop_card_service.dart';
 
 class PetShopListServices extends StatefulWidget {
-  final Function(String) addRemoveService;
+  final Function(String, String) addRemoveService;
   const PetShopListServices({super.key, required this.addRemoveService});
 
   @override
@@ -12,6 +13,9 @@ class PetShopListServices extends StatefulWidget {
 }
 
 class _PetShopListServicesState extends State<PetShopListServices> {
+  List<String> servicesChoices = <String>[];
+  final servicesChoiceNotifier = ValueNotifier(<String>[]);
+
   @override
   Widget build(BuildContext context) {
     return SliverList(
@@ -19,6 +23,9 @@ class _PetShopListServicesState extends State<PetShopListServices> {
         (context, index) {
           final serviceName = NuvolsCoreMockData.gerarPalavras(2);
           final serviceID = NuvolsCoreMockData.gerarNumeros(50);
+          final serviceDescription = NuvolsCoreMockData.gerarPalavras(10);
+          final servicePrice = double.tryParse(NuvolsCoreMockData.gerarNumeros(2).toString()) ?? 0.00;
+          final serviceTime = int.tryParse(NuvolsCoreMockData.gerarNumeros(2)) ?? 10;
           return Stack(
             children: [
               Container(
@@ -28,13 +35,23 @@ class _PetShopListServicesState extends State<PetShopListServices> {
               ),
               GestureDetector(
                 onTap: () {
-                  widget.addRemoveService(serviceID.toString());
+                  _serviceAddRemove(serviceID);
+                  widget.addRemoveService(serviceID.toString(), serviceName.toString());
                 },
-                child: PetshopCardService(
-                  serviceName: serviceName,
-                  serviceDescription: NuvolsCoreMockData.gerarPalavras(12),
-                  servicePrice: double.tryParse(NuvolsCoreMockData.gerarNumeros(2).toString()) ?? 0.00,
-                  serviceTime: int.tryParse(NuvolsCoreMockData.gerarNumeros(2)) ?? 10,
+                child: ValueListenableBuilder<List<String>>(
+                  valueListenable: servicesChoiceNotifier,
+                  builder: (_, dynamic value, Widget? child) {
+                    final serviceChoice = value.toList().contains(serviceID);
+                    NuvolsLogger().info("Build do card: ${serviceChoice.toString()}");
+                    return PetshopCardService(
+                      serviceID: serviceID,
+                      serviceName: serviceName,
+                      serviceDescription: serviceDescription,
+                      servicePrice: servicePrice,
+                      serviceTime: serviceTime,
+                      selected: serviceChoice,
+                    );
+                  },
                 ),
               ),
             ],
@@ -43,5 +60,19 @@ class _PetShopListServicesState extends State<PetShopListServices> {
         childCount: 50,
       ),
     );
+  }
+
+  void _serviceAddRemove(String serviceID) {
+    try {
+      if (servicesChoices.contains(serviceID)) {
+        servicesChoices.remove(servicesChoices.where((element) => element == serviceID).first);
+      } else {
+        servicesChoices.add(serviceID);
+      }
+      servicesChoiceNotifier.value = [...servicesChoices];
+      NuvolsLogger().debug("${servicesChoiceNotifier.value.toList()}");
+    } catch (error, stackTrace) {
+      NuvolsLogger().erro("-----ERRO-----", error, stackTrace);
+    }
   }
 }

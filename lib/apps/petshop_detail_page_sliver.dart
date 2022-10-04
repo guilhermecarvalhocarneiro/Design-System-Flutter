@@ -17,14 +17,17 @@ class PetShopDetailPageSliver extends StatefulWidget {
 
 class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
   List<String> servicesChoice = <String>[];
+  List<String> servicesChoiceName = <String>[];
   final servicesNotifier = ValueNotifier(0);
 
-  void _serviceAddRemove(String serviceID) {
+  void _serviceAddRemove(String serviceID, String serviceName) {
     try {
       if (servicesChoice.contains(serviceID)) {
         servicesChoice.remove(servicesChoice.where((element) => element == serviceID).first);
+        servicesChoiceName.remove(servicesChoiceName.where((element) => element == serviceName).first);
       } else {
         servicesChoice.add(serviceID);
+        servicesChoiceName.add(serviceName);
       }
       servicesNotifier.value = servicesChoice.length;
     } catch (error, stackTrace) {
@@ -37,7 +40,9 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
     NuvolsLogger().debug("Build da App");
     return Container(
       padding: const EdgeInsets.only(top: kToolbarHeight),
-      decoration: BoxDecoration(gradient: CustomBackgroundColors.gradientAppBarPetshop),
+      decoration: BoxDecoration(
+        gradient: CustomBackgroundColors.gradientAppBarPetshop,
+      ),
       child: Stack(
         children: [
           CustomScrollView(
@@ -73,12 +78,20 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
+                      margin: const EdgeInsets.only(bottom: kToolbarHeight),
                       height: 85,
                       width: MediaQuery.of(context).size.width * .85,
-                      color: Colors.amberAccent,
-                      child: Text(
-                        "${value.toString()} Serviços selecionados",
-                        textAlign: TextAlign.center,
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10.5)),
+                          boxShadow: [BoxShadow(color: Colors.black38, blurRadius: 2.5)],
+                          color: Colors.amberAccent),
+                      child: Column(
+                        children: [
+                          Text(
+                            "${value.toString()} Serviços selecionados",
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   ));
