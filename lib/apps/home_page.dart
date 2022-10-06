@@ -4,6 +4,8 @@ import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../core/routers.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -42,22 +44,27 @@ class _HomePageState extends State<HomePage> {
           switch (index) {
             case 0:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const NuvolsDashboardPage(),
               );
             case 1:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const PetShopsListPage(),
               );
             case 2:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const Scaffold(body: Center(child: Text("Agenda"))),
               );
             case 3:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const Scaffold(body: Center(child: Text("Clientes"))),
               );
             default:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const Scaffold(body: Center(child: Text("Perfil"))),
               );
           }

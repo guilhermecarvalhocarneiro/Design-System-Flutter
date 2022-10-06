@@ -5,7 +5,7 @@ import '../nuvols_logger.dart';
 import 'petshop_card_service.dart';
 
 class PetShopListServices extends StatefulWidget {
-  final Function(String, String) addRemoveService;
+  final Function(String, String, double) addRemoveService;
   const PetShopListServices({super.key, required this.addRemoveService});
 
   @override
@@ -36,13 +36,16 @@ class _PetShopListServicesState extends State<PetShopListServices> {
               GestureDetector(
                 onTap: () {
                   _serviceAddRemove(serviceID);
-                  widget.addRemoveService(serviceID.toString(), serviceName.toString());
+                  widget.addRemoveService(
+                    serviceID.toString(),
+                    serviceName.toString(),
+                    servicePrice,
+                  );
                 },
                 child: ValueListenableBuilder<List<String>>(
                   valueListenable: servicesChoiceNotifier,
                   builder: (_, dynamic value, Widget? child) {
                     final serviceChoice = value.toList().contains(serviceID);
-                    NuvolsLogger().info("Build do card: ${serviceChoice.toString()}");
                     return PetshopCardService(
                       serviceID: serviceID,
                       serviceName: serviceName,

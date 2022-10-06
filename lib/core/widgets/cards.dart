@@ -98,13 +98,13 @@ class _NuvolsPetshopCardState extends State<NuvolsPetshopCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.pushNamed(context, PetShopDetailPage.routeName);
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const PetShopDetailPageSliver(),
-          ),
-        );
+        Navigator.pushNamed(context, PetShopDetailPageSliver.routeName);
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => const PetShopDetailPageSliver(),
+        //   ),
+        // );
       },
       child: Container(
         height: 255,
