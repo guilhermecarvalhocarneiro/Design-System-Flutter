@@ -22,6 +22,8 @@ class CustomColors {
   static const Color labelText = Color(0xff636363);
   static const Color yellowInitialBackground = Color(0xffFFD074);
   static const Color yellowFinalBackground = Color(0xffff9433);
+  static const Color blueInitialBackground = Color(0xffD8E3E9);
+  static const Color blueFinalBackground = Color(0xffa5d4de);
 }
 
 class CustomBackgroundColors {
@@ -31,8 +33,8 @@ class CustomBackgroundColors {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        CustomColors.yellowInitialBackground,
-        CustomColors.yellowFinalBackground,
+        CustomColors.blueInitialBackground,
+        CustomColors.blueFinalBackground,
       ],
     );
   }
@@ -41,8 +43,8 @@ class CustomBackgroundColors {
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [
-        CustomColors.yellowInitialBackground,
-        CustomColors.yellowFinalBackground,
+        CustomColors.blueInitialBackground,
+        CustomColors.blueFinalBackground,
       ],
     );
   }
