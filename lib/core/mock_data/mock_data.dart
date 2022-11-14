@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 import 'dart:math';
 
 class NuvolsCoreMockData {
@@ -110,6 +112,15 @@ class NuvolsCoreMockData {
     );
   }
 
+  /// Método para gerar uma data aleatória
+  static String gerarDataAleatoria() {
+    Random random = Random();
+    final day = random.nextInt(28);
+    final month = random.nextInt(12);
+    final year = Random().nextDouble() * (2021 - 2000) + 2000;
+    return "${day}/${month}/${year.floor()}";
+  }
+
   static String gerarEmail() {
     final dominios = ['gmail.com', 'yahoo.com', 'hotmail.com'];
     Random random = Random();
@@ -140,7 +151,10 @@ class NuvolsCoreMockData {
       'https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg',
       'https://images.pexels.com/photos/161154/stained-glass-spiral-circle-pattern-161154.jpeg',
       'https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg',
-      'https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg'
+      'https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg',
+      'https://images.pexels.com/photos/1631678/pexels-photo-1631678.jpeg',
+      'https://images.pexels.com/photos/11220221/pexels-photo-11220221.jpeg',
+      'https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg'
     ];
     Random random = Random();
     final image = images[random.nextInt(images.length)];

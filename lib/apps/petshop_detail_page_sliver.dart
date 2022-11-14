@@ -98,7 +98,7 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                           blurRadius: 2.5,
                         )
                       ],
-                      color: CustomColors.bluePetshopBackgroundCard,
+                      color: CustomColors.mediumSeaGreenCardIndex,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -110,7 +110,7 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                             "${value.toString()} Serviços selecionados",
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: CustomColors.textBluePetShopCardService,
                               fontSize: 18,
                               fontWeight: FontWeight.w800,
                             ),
@@ -120,14 +120,22 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                           "Valor: R\$ ${servicesPrice.toStringAsFixed(2)}",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: CustomColors.textBluePetShopCardService,
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
                           ),
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: const Text("Agendar atendimento."),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Colors.white),
+                          ),
+                          child: const Text(
+                            "Agendar atendimento.",
+                            style: TextStyle(
+                              color: CustomColors.textBluePetShopCardService,
+                            ),
+                          ),
                         )
                       ],
                     ),
