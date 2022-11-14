@@ -39,7 +39,7 @@ class CustomBackgroundColors {
       ],
     );
   }
-  
+
   static LinearGradient get gradientAppBarPetshop {
     return const LinearGradient(
       begin: Alignment.centerLeft,
@@ -60,6 +60,19 @@ class CustomBackgroundColors {
       colors: [
         CustomColors.black.withOpacity(0.05),
         CustomColors.black.withOpacity(0.99),
+      ],
+    );
+  }
+
+  /// Gradiente para o cartão do Pet na tela
+  /// de listagem de Pet's
+  static LinearGradient get gradientMyPetDetailPageBody {
+    return LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Colors.white.withOpacity(0.8),
+        CustomColors.blueFinalBackground.withOpacity(0.2),
       ],
     );
   }

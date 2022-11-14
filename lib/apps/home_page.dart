@@ -1,5 +1,5 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
-import 'package:design_pinterest/apps/pet_page.dart';
+import 'package:design_pinterest/apps/my_pet/my_pets_page.dart';
 import 'package:design_pinterest/apps/petsshops_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.building_2_fill)),
             BottomNavigationBarItem(icon: Icon(Icons.calendar_month)),
             BottomNavigationBarItem(icon: Icon(Icons.pets)),
-            BottomNavigationBarItem(icon: Icon(Icons.person_off_outlined)),
+            BottomNavigationBarItem(icon: Icon(Icons.person)),
           ],
           border: const Border(),
         ),
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
             case 3:
               return CupertinoTabView(
                 onGenerateRoute: RouteGenerator.generateRoute,
-                builder: (context) => const PetPage(),
+                builder: (context) => const MyPetsPage(),
               );
             default:
               return CupertinoTabView(

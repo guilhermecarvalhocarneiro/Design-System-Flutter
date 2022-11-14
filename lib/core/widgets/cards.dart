@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:design_pinterest/apps/my_pet/my_pet_detail_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -175,15 +176,10 @@ class NuvolsMyPetsCard extends StatefulWidget {
 class _NuvolsMyPetsCardState extends State<NuvolsMyPetsCard> {
   @override
   Widget build(BuildContext context) {
+    var petName = NuvolsCoreMockData.gerarPalavras(2);
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, PetShopDetailPageSliver.routeName);
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => const PetShopDetailPageSliver(),
-        //   ),
-        // );
+        Navigator.pushNamed(context, MyPetDetailPage.routeName, arguments: petName);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
@@ -220,9 +216,7 @@ class _NuvolsMyPetsCardState extends State<NuvolsMyPetsCard> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
-                    child: MyPetNameCard(
-                      none: NuvolsCoreMockData.gerarPalavras(2),
-                    ),
+                    child: MyPetNameCard(nome: petName),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
