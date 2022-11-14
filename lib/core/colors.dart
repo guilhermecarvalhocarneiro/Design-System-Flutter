@@ -22,6 +22,9 @@ class CustomColors {
   static const Color labelText = Color(0xff636363);
   static const Color yellowInitialBackground = Color(0xffFFD074);
   static const Color yellowFinalBackground = Color(0xffff9433);
+  static const Color blueInitialBackground = Color(0xffD8E3E9);
+  static const Color blueFinalBackground = Color(0xffa5d4de);
+  static const Color textBluePetShopCardService = Color(0xff425c81);
 }
 
 class CustomBackgroundColors {
@@ -31,18 +34,45 @@ class CustomBackgroundColors {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        CustomColors.yellowInitialBackground,
-        CustomColors.yellowFinalBackground,
+        CustomColors.blueInitialBackground,
+        CustomColors.blueFinalBackground,
       ],
     );
   }
+
   static LinearGradient get gradientAppBarPetshop {
     return const LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [
-        CustomColors.yellowInitialBackground,
-        CustomColors.yellowFinalBackground,
+        CustomColors.blueInitialBackground,
+        CustomColors.blueFinalBackground,
+      ],
+    );
+  }
+
+  /// Gradiente para o cartão do Pet na tela
+  /// de listagem de Pet's
+  static LinearGradient get gradientMyPetCardImageEffect {
+    return LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        CustomColors.black.withOpacity(0.05),
+        CustomColors.black.withOpacity(0.99),
+      ],
+    );
+  }
+
+  /// Gradiente para o cartão do Pet na tela
+  /// de listagem de Pet's
+  static LinearGradient get gradientMyPetDetailPageBody {
+    return LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Colors.white.withOpacity(0.8),
+        CustomColors.blueFinalBackground.withOpacity(0.2),
       ],
     );
   }

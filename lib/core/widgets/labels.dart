@@ -282,7 +282,21 @@ class TitlePetshopPage extends StatelessWidget {
     return const SliverToBoxAdapter(
       child: Padding(
         padding: EdgeInsets.only(top: 12.0, bottom: 8),
-        child: TitlePage(texto: "Confirma os pet's parceiros"),
+        child: TitlePage(texto: "Confira os pet's parceiros"),
+      ),
+    );
+  }
+}
+
+class TitlePetPage extends StatelessWidget {
+  const TitlePetPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.only(top: 12.0, bottom: 8),
+        child: TitlePage(texto: "Meus Pet's"),
       ),
     );
   }
@@ -316,7 +330,7 @@ class PetshopNameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 28),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 28),
     );
   }
 }
@@ -329,7 +343,7 @@ class PetshopAddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 14),
     );
   }
 }
@@ -361,7 +375,7 @@ class PetshopEmailCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 14),
     );
   }
 }
@@ -374,7 +388,10 @@ class PetshopPhoneCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(
+        color: CustomColors.textBluePetShopCardService,
+        fontSize: 14,
+      ),
     );
   }
 }
@@ -394,6 +411,154 @@ class LoadingText extends StatelessWidget {
         color: Colors.white,
         fontSize: 18,
         fontWeight: FontWeight.w600,
+      ),
+    );
+  }
+}
+
+/// Área para definir os labels do card da tela de MyPets
+
+class MyPetNameCard extends StatelessWidget {
+  final String nome;
+  const MyPetNameCard({super.key, required this.nome});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      nome,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 28,
+      ),
+    );
+  }
+}
+
+class MyPetAgeCard extends StatelessWidget {
+  final String idade;
+  const MyPetAgeCard({super.key, required this.idade});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$idade anos",
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+      ),
+    );
+  }
+}
+
+class MyPetLastVacinnation extends StatelessWidget {
+  final String data;
+  const MyPetLastVacinnation({super.key, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Última vacina aplicada em: $data",
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+      ),
+    );
+  }
+}
+
+class MyPetLastShower extends StatelessWidget {
+  final String data;
+  const MyPetLastShower({super.key, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Último banho: $data",
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+      ),
+    );
+  }
+}
+
+class MyPetNameDetail extends StatelessWidget {
+  final String nome;
+  const MyPetNameDetail({super.key, required this.nome});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      nome,
+      style: const TextStyle(
+        color: CustomColors.black,
+        fontSize: 28,
+      ),
+    );
+  }
+}
+
+class MyPetDetailAgeCard extends StatelessWidget {
+  final String idade;
+  const MyPetDetailAgeCard({super.key, required this.idade});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$idade anos",
+      style: const TextStyle(
+        color: CustomColors.black,
+        fontSize: 24,
+      ),
+    );
+  }
+}
+
+class MyPetDetailLastVacinnation extends StatelessWidget {
+  final String data;
+  const MyPetDetailLastVacinnation({super.key, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Última vacina aplicada em: $data",
+      style: const TextStyle(
+        color: CustomColors.black,
+        fontSize: 18,
+      ),
+    );
+  }
+}
+
+class MyPetDetailLastShower extends StatelessWidget {
+  final String data;
+  const MyPetDetailLastShower({super.key, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Último banho: $data",
+      style: const TextStyle(
+        color: CustomColors.black,
+        fontSize: 18,
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class MyPetDetailDefaultText extends StatelessWidget {
+  final String texto;
+  double fontSize;
+  MyPetDetailDefaultText({super.key, required this.texto, this.fontSize = 18});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      texto,
+      style: TextStyle(
+        color: CustomColors.black,
+        fontSize: fontSize,
       ),
     );
   }

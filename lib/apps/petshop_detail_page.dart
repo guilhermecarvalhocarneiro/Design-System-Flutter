@@ -2,7 +2,6 @@ import 'package:design_pinterest/core/widgets/custom_backbuttom_head.dart';
 import 'package:flutter/material.dart';
 
 import '../core/widgets/petshop_detail_page_head.dart';
-import '../core/widgets/petshop_listservices.dart';
 import '../core/widgets/petshop_white_container.dart';
 
 class PetShopDetailPage extends StatefulWidget {
@@ -26,12 +25,9 @@ class _PetShopDetailPageState extends State<PetShopDetailPage> {
               top: MediaQuery.of(context).size.height * .12,
               bottom: 55,
             ),
-            child: CustomScrollView(
+            child: const CustomScrollView(
               slivers: [
-                const PetShopWhiteCardOverHeader(),
-                PetShopListServices(
-                  addRemoveService: (value){},
-                ),
+                PetShopWhiteCardOverHeader(),
               ],
             ),
           ),

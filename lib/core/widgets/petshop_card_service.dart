@@ -2,17 +2,21 @@ import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class PetshopCardService extends StatefulWidget {
+  final String serviceID;
   final String serviceName;
   final String serviceDescription;
   final double servicePrice;
   final int serviceTime;
+  final bool selected;
 
   const PetshopCardService({
     super.key,
+    required this.serviceID,
     required this.serviceName,
     required this.serviceDescription,
     required this.servicePrice,
     required this.serviceTime,
+    this.selected = false,
   });
 
   @override
@@ -25,7 +29,7 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
     return Container(
       margin: const EdgeInsets.only(left: 8, right: 8),
       decoration: BoxDecoration(
-        color: CustomColors.yellowInitialBackground,
+        color: widget.selected ? CustomColors.bluePetshopBackgroundCard : CustomColors.blueInitialBackground,
         borderRadius: BorderRadius.circular(12.2),
       ),
       child: Padding(
@@ -35,10 +39,10 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
           children: [
             Text(
               widget.serviceName,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
-                color: Colors.white,
+                color:  widget.selected ? Colors.white: CustomColors.textBluePetShopCardService,
               ),
             ),
             Padding(
@@ -47,9 +51,9 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
               ),
               child: Text(
                 widget.serviceDescription,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: widget.selected ? Colors.white : CustomColors.textBluePetShopCardService,
                   height: 1.15,
                 ),
               ),
@@ -58,23 +62,23 @@ class _PetshopCardServiceState extends State<PetshopCardService> {
               alignment: Alignment.centerRight,
               child: Text(
                 "R\$ ${widget.servicePrice.toStringAsFixed(2)}",
-                style: const TextStyle(
+                style:  TextStyle(
                   fontSize: 26,
-                  color: Colors.white,
+                  color: widget.selected ? Colors.white : CustomColors.textBluePetShopCardService,
                   fontWeight: FontWeight.w800,
                 ),
               ),
             ),
-            const Text(
+             Text(
               "Tempo de execução do serviço",
               style: TextStyle(
-                color: Colors.white,
+                color: widget.selected ? Colors.white: CustomColors.textBluePetShopCardService,
               ),
             ),
             Text(
               "${widget.serviceTime.toString()} minutos",
-              style: const TextStyle(
-                color: Colors.white,
+              style:  TextStyle(
+                color: widget.selected ? Colors.white : CustomColors.textBluePetShopCardService,
               ),
             ),
           ],

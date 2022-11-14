@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:design_pinterest/apps/petshop_detail_page.dart';
+import 'package:design_pinterest/apps/my_pet/my_pet_detail_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -98,13 +98,13 @@ class _NuvolsPetshopCardState extends State<NuvolsPetshopCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.pushNamed(context, PetShopDetailPage.routeName);
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const PetShopDetailPageSliver(),
-          ),
-        );
+        Navigator.pushNamed(context, PetShopDetailPageSliver.routeName);
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => const PetShopDetailPageSliver(),
+        //   ),
+        // );
       },
       child: Container(
         height: 255,
@@ -156,6 +156,87 @@ class _NuvolsPetshopCardState extends State<NuvolsPetshopCard> {
               padding: const EdgeInsets.only(left: 8.0),
               child: PetshopPhoneCard(
                 texto: NuvolsCoreMockData.gerarTelefone(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Classe para renderizar o Card da página Meus Pets
+class NuvolsMyPetsCard extends StatefulWidget {
+  const NuvolsMyPetsCard({super.key});
+
+  @override
+  State<NuvolsMyPetsCard> createState() => _NuvolsMyPetsCardState();
+}
+
+class _NuvolsMyPetsCardState extends State<NuvolsMyPetsCard> {
+  @override
+  Widget build(BuildContext context) {
+    var petName = NuvolsCoreMockData.gerarPalavras(2);
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, MyPetDetailPage.routeName, arguments: petName);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        child: Stack(
+          children: [
+            SizedBox(
+              height: 255,
+              width: double.infinity,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.5),
+                child: CachedNetworkImage(
+                  fit: BoxFit.cover,
+                  imageUrl: NuvolsCoreMockData.getRandomImage,
+                  placeholder: (context, url) => const Center(
+                    child: LoadingText(),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.5),
+                gradient: CustomBackgroundColors.gradientMyPetCardImageEffect,
+              ),
+              height: 255,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 8, bottom: 8),
+              height: 255,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: MyPetNameCard(nome: petName),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: MyPetAgeCard(
+                      idade: NuvolsCoreMockData.gerarNumeros(1),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: MyPetLastVacinnation(
+                      data: NuvolsCoreMockData.gerarDataAleatoria(),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: MyPetLastShower(
+                      data: NuvolsCoreMockData.gerarDataAleatoria(),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -1,8 +1,11 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
+import 'package:design_pinterest/apps/my_pet/my_pets_page.dart';
 import 'package:design_pinterest/apps/petsshops_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../core/routers.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,10 +34,10 @@ class _HomePageState extends State<HomePage> {
           inactiveColor: CustomColors.navigatorButtomInactive,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home)),
-            BottomNavigationBarItem(icon: Icon(Icons.pets)),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.building_2_fill)),
             BottomNavigationBarItem(icon: Icon(Icons.calendar_month)),
-            BottomNavigationBarItem(icon: Icon(Icons.person_add_alt)),
-            BottomNavigationBarItem(icon: Icon(Icons.person_off_outlined)),
+            BottomNavigationBarItem(icon: Icon(Icons.pets)),
+            BottomNavigationBarItem(icon: Icon(Icons.person)),
           ],
           border: const Border(),
         ),
@@ -42,22 +45,27 @@ class _HomePageState extends State<HomePage> {
           switch (index) {
             case 0:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const NuvolsDashboardPage(),
               );
             case 1:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const PetShopsListPage(),
               );
             case 2:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const Scaffold(body: Center(child: Text("Agenda"))),
               );
             case 3:
               return CupertinoTabView(
-                builder: (context) => const Scaffold(body: Center(child: Text("Clientes"))),
+                onGenerateRoute: RouteGenerator.generateRoute,
+                builder: (context) => const MyPetsPage(),
               );
             default:
               return CupertinoTabView(
+                onGenerateRoute: RouteGenerator.generateRoute,
                 builder: (context) => const Scaffold(body: Center(child: Text("Perfil"))),
               );
           }
