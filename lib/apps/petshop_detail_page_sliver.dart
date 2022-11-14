@@ -21,6 +21,8 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
   var servicesPrice = 0.0;
   final servicesNotifier = ValueNotifier(0);
 
+  /// Método para adicionar ou remover os serviços da lista de serviços
+  /// contratados
   void _serviceAddRemove(String serviceID, String serviceName, double servicePrice) {
     try {
       if (servicesChoice.contains(serviceID)) {
@@ -59,9 +61,7 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                 pinned: true,
                 snap: false,
                 expandedHeight: 235,
-                backgroundColor: CustomColors.yellowInitialBackground.withOpacity(
-                  0.85,
-                ),
+                backgroundColor: CustomColors.blueFinalBackground,
                 title: Text(
                   NuvolsCoreMockData.gerarPalavra(),
                 ),
@@ -86,10 +86,10 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    margin: const EdgeInsets.only(bottom: kToolbarHeight),
+                    margin: const EdgeInsets.only(bottom: kToolbarHeight + 38),
                     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                     height: 122,
-                    width: MediaQuery.of(context).size.width * .90,
+                    width: MediaQuery.of(context).size.width * .95,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10.5)),
                       boxShadow: [

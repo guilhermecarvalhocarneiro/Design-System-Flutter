@@ -282,7 +282,7 @@ class TitlePetshopPage extends StatelessWidget {
     return const SliverToBoxAdapter(
       child: Padding(
         padding: EdgeInsets.only(top: 12.0, bottom: 8),
-        child: TitlePage(texto: "Confirma os pet's parceiros"),
+        child: TitlePage(texto: "Confira os pet's parceiros"),
       ),
     );
   }
@@ -316,7 +316,7 @@ class PetshopNameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 28),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 28),
     );
   }
 }
@@ -329,7 +329,7 @@ class PetshopAddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 14),
     );
   }
 }
@@ -361,7 +361,7 @@ class PetshopEmailCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(color:CustomColors.textBluePetShopCardService, fontSize: 14),
     );
   }
 }
@@ -374,7 +374,7 @@ class PetshopPhoneCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       texto,
-      style: const TextStyle(color: Colors.white, fontSize: 14),
+      style: const TextStyle(color: CustomColors.textBluePetShopCardService, fontSize: 14),
     );
   }
 }

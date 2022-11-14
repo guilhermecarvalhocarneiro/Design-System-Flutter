@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:design_pinterest/apps/petshop_detail_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 

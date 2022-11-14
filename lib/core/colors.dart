@@ -24,6 +24,7 @@ class CustomColors {
   static const Color yellowFinalBackground = Color(0xffff9433);
   static const Color blueInitialBackground = Color(0xffD8E3E9);
   static const Color blueFinalBackground = Color(0xffa5d4de);
+  static const Color textBluePetShopCardService = Color(0xff425c81);
 }
 
 class CustomBackgroundColors {
