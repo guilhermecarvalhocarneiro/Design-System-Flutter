@@ -25,6 +25,7 @@ class CustomColors {
   static const Color blueInitialBackground = Color(0xffD8E3E9);
   static const Color blueFinalBackground = Color(0xffa5d4de);
   static const Color textBluePetShopCardService = Color(0xff425c81);
+  static const Color elevateButtonServiceSchedule = Color(0xffC0A27C);
 }
 
 class CustomBackgroundColors {

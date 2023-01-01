@@ -22,7 +22,7 @@ class PetShopHead extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 25,
+            height: 35,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -32,7 +32,56 @@ class PetShopHead extends StatelessWidget {
             ),
           ),
         ),
+        // const ScheduleButton(),
       ],
+    );
+  }
+}
+
+class ScheduleButton extends StatelessWidget {
+  const ScheduleButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 10,
+      width: MediaQuery.of(context).size.width,
+      child: Align(
+        alignment: Alignment.center,
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * .65,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              primary: CustomColors.elevateButtonServiceSchedule,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(
+                  Icons.calendar_today,
+                  color: Colors.white,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  "Agendar atendimento.",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

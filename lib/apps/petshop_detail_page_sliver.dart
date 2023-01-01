@@ -61,6 +61,7 @@ class _PetShopDetailPageSliverState extends State<PetShopDetailPageSliver> {
                 pinned: true,
                 snap: false,
                 expandedHeight: 235,
+                collapsedHeight: 235,
                 backgroundColor: CustomColors.blueFinalBackground,
                 title: Text(
                   NuvolsCoreMockData.gerarPalavra(),
