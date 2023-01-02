@@ -83,7 +83,7 @@ class ScheduleButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: CustomColors.elevateButtonServiceScheduleOrange,
+            primary: CustomColors.elevateButtonServiceScheduleOrange,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
