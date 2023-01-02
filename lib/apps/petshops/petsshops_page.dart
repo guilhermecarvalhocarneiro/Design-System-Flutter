@@ -1,9 +1,7 @@
 import 'package:design_pinterest/core/widgets/custom_listitens.dart';
-import 'package:design_pinterest/core/widgets/labels.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/page_header.dart';
-
 
 class PetShopsListPage extends StatefulWidget {
   const PetShopsListPage({super.key});
@@ -21,8 +19,9 @@ class _PetShopsListPageState extends State<PetShopsListPage> {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: const CustomScrollView(
         slivers: [
-          NuvolsPageHeader(),
-          TitlePetshopPage(),
+          NuvolsPageHeader(
+            titlePage: "Pet´s parceiros",
+          ),
           NuvolsCustomListItens(),
         ],
       ),

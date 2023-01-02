@@ -1,11 +1,11 @@
-import 'package:design_pinterest/core/labels.dart';
 import 'package:flutter/material.dart';
 
 import 'labels.dart';
 
 class NuvolsPageHeader extends StatefulWidget {
   final double padding;
-  const NuvolsPageHeader({super.key, this.padding = 0.0});
+  final String titlePage;
+  const NuvolsPageHeader({super.key, this.padding = 0.0, this.titlePage = "Amigo Tutor"});
 
   @override
   State<NuvolsPageHeader> createState() => _NuvolsPageHeaderState();
@@ -24,9 +24,9 @@ class _NuvolsPageHeaderState extends State<NuvolsPageHeader> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Titulo(texto: nomeAplicacao),
-                IconButton(
+              children: [
+                Titulo(texto: widget.titlePage),
+                const IconButton(
                     constraints: BoxConstraints(
                       maxHeight: 24,
                     ),

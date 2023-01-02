@@ -563,3 +563,19 @@ class MyPetDetailDefaultText extends StatelessWidget {
     );
   }
 }
+
+
+
+class TitleSchedulePage extends StatelessWidget {
+  const TitleSchedulePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.only(top: 12.0, bottom: 8),
+        child: TitlePage(texto: "Minha agenda"),
+      ),
+    );
+  }
+}

@@ -1,4 +1,3 @@
-import 'package:design_pinterest/core/widgets/labels.dart';
 import 'package:design_pinterest/core/widgets/mypets_customlistitens.dart';
 import 'package:design_pinterest/core/widgets/page_header.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +20,10 @@ class _MyPetsPageState extends State<MyPetsPage> {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: const CustomScrollView(
           slivers: [
-            NuvolsPageHeader(),
-            TitlePetPage(),
-            NuvolsMyPetsCustomlistitens(),
+            NuvolsPageHeader(
+              titlePage: "Meus pet´s",
+            ),
+            NuvolsMyPetsCustomlistItens(),
           ],
         ),
       ),

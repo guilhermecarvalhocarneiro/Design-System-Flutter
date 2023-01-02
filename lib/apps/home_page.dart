@@ -1,6 +1,7 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
 import 'package:design_pinterest/apps/my_pet/my_pets_page.dart';
 import 'package:design_pinterest/apps/petshops/petsshops_page.dart';
+import 'package:design_pinterest/apps/schedulle/schedule_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             case 2:
               return CupertinoTabView(
                 onGenerateRoute: RouteGenerator.generateRoute,
-                builder: (context) => const Scaffold(body: Center(child: Text("Agenda"))),
+                builder: (context) => const SchedulePage(),
               );
             case 3:
               return CupertinoTabView(
