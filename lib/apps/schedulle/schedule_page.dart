@@ -1,3 +1,4 @@
+import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/page_header.dart';
@@ -58,9 +59,9 @@ class _ScheduleCardPageState extends State<ScheduleCardPage> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.orangeAccent,
+        color: CustomColors.mediumSeaGreenCardIndex,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
@@ -71,12 +72,26 @@ class _ScheduleCardPageState extends State<ScheduleCardPage> {
           ),
         ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          ScheduleCardDateHour(),
-          ScheduleCardServiceItens(),
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const Text(
+            "Nome do Pet",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w500,
+              color: CustomColors.textBluePetShopCardService,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              ScheduleCardDateHour(),
+              ScheduleCardServiceItens(),
+            ],
+          ),
         ],
       ),
     );
@@ -99,8 +114,9 @@ class ScheduleCardServiceItens extends StatelessWidget {
           const Text(
             "Itens",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: FontWeight.w400,
+              color: CustomColors.textBluePetShopCardService,
             ),
           ),
           Padding(
@@ -109,13 +125,45 @@ class ScheduleCardServiceItens extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
-                Text("Banho"),
-                Text("Tosa"),
+                ServiceIten(serviceName: "Banho"),
+                ServiceIten(serviceName: "Tosa"),
+                ServiceIten(serviceName: "Vacina"),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class ServiceIten extends StatelessWidget {
+  final String serviceName;
+  const ServiceIten({
+    Key? key,
+    required this.serviceName,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Icon(
+          Icons.check,
+          color: CustomColors.textBluePetShopCardService,
+          size: 20,
+        ),
+        const SizedBox(width: 4),
+        Text(
+          serviceName,
+          style: const TextStyle(
+            height: 1,
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: CustomColors.textBluePetShopCardService,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -129,21 +177,26 @@ class ScheduleCardDateHour extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
       children: const [
         Text(
           "22",
           style: TextStyle(
-            height: 0.5,
-            fontSize: 32,
+            height: 1,
+            fontSize: 38,
             fontWeight: FontWeight.bold,
+            color: CustomColors.textBluePetShopCardService,
           ),
         ),
         Text(
           "08:25",
           textAlign: TextAlign.start,
           style: TextStyle(
+            height: .5,
             fontSize: 18,
             fontWeight: FontWeight.w400,
+            color: CustomColors.textBluePetShopCardService,
           ),
         ),
       ],
