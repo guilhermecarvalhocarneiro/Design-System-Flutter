@@ -1,6 +1,6 @@
 import 'package:design_pinterest/apps/dashboard_page.dart';
 import 'package:design_pinterest/apps/my_pet/my_pets_page.dart';
-import 'package:design_pinterest/apps/petsshops_page.dart';
+import 'package:design_pinterest/apps/petshops/petsshops_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

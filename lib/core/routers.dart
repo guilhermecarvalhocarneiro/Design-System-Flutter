@@ -1,8 +1,9 @@
 import 'package:design_pinterest/apps/my_pet/my_pet_detail_page.dart';
-import 'package:design_pinterest/apps/petshop_detail_page.dart';
-import 'package:design_pinterest/apps/petshop_detail_page_sliver.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../apps/petshops/petshop_detail_page.dart';
+import '../apps/petshops/petshop_detail_page_sliver.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

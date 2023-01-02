@@ -1,11 +1,11 @@
 import 'package:design_pinterest/core/mock_data/mock_data.dart';
 import 'package:flutter/material.dart';
 
-import '../core/colors.dart';
-import '../core/nuvols_logger.dart';
-import '../core/widgets/petshop_detail_page_head.dart';
-import '../core/widgets/petshop_listservices.dart';
-import '../core/widgets/petshop_white_container.dart';
+import '../../core/colors.dart';
+import '../../core/nuvols_logger.dart';
+import '../../core/widgets/petshop_detail_page_head.dart';
+import '../../core/widgets/petshop_listservices.dart';
+import '../../core/widgets/petshop_white_container.dart';
 
 class PetShopDetailPageSliver extends StatefulWidget {
   static const String routeName = "PetShopDetailPageSliver";

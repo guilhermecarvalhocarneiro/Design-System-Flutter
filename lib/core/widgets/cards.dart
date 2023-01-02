@@ -3,7 +3,7 @@ import 'package:design_pinterest/apps/my_pet/my_pet_detail_page.dart';
 import 'package:design_pinterest/core/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../apps/petshop_detail_page_sliver.dart';
+import '../../apps/petshops/petshop_detail_page_sliver.dart';
 import '../mock_data/mock_data.dart';
 import 'labels.dart';
 
