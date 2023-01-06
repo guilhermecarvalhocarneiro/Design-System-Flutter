@@ -203,6 +203,21 @@ class _TextListViewHistoryOperation extends State<TextListViewHistoryOperation> 
   }
 }
 
+class TitleScheduleRequestServicePage extends StatelessWidget {
+  const TitleScheduleRequestServicePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverToBoxAdapter(
+        child: Padding(
+      padding: EdgeInsets.only(top: 12.0, bottom: 8),
+      child: TituloSecao(
+        texto: "Escolha o dia que seja o atendimento",
+      ),
+    ));
+  }
+}
+
 class TitleGridHomePage extends StatelessWidget {
   const TitleGridHomePage({super.key});
 
@@ -563,8 +578,6 @@ class MyPetDetailDefaultText extends StatelessWidget {
     );
   }
 }
-
-
 
 class TitleSchedulePage extends StatelessWidget {
   const TitleSchedulePage({super.key});

@@ -1,4 +1,5 @@
 import 'package:design_pinterest/core/colors.dart';
+import 'package:design_pinterest/core/mock_data/mock_data.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/page_header.dart';
@@ -76,12 +77,12 @@ class _ScheduleCardPageState extends State<ScheduleCardPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Text(
-            "Nome do Pet",
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w500,
-              color: CustomColors.textBluePetShopCardService,
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              NuvolsCoreMockData.gerarPalavra(tamanho: 8),
+              style: const TextStyle(
+                  fontSize: 30, fontWeight: FontWeight.w500, color: CustomColors.textBluePetShopCardService, height: 1),
             ),
           ),
           Row(
@@ -92,7 +93,37 @@ class _ScheduleCardPageState extends State<ScheduleCardPage> {
               ScheduleCardServiceItens(),
             ],
           ),
+          ScheduleCardTotalPriceService(
+            totalPrice: double.tryParse(NuvolsCoreMockData.gerarNumeros(3)) ?? 12.5,
+          )
         ],
+      ),
+    );
+  }
+}
+
+class ScheduleCardTotalPriceService extends StatelessWidget {
+  final double totalPrice;
+  const ScheduleCardTotalPriceService({
+    Key? key,
+    required this.totalPrice,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 12.0),
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Text(
+          "R\$ ${totalPrice.toStringAsFixed(2).replaceAll(".", ",")}",
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            height: 1,
+          ),
+        ),
       ),
     );
   }
@@ -124,10 +155,10 @@ class ScheduleCardServiceItens extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                ServiceIten(serviceName: "Banho"),
-                ServiceIten(serviceName: "Tosa"),
-                ServiceIten(serviceName: "Vacina"),
+              children: [
+                ServiceIten(serviceName: NuvolsCoreMockData.gerarPalavra(tamanho: 8)),
+                ServiceIten(serviceName: NuvolsCoreMockData.gerarPalavra(tamanho: 8)),
+                ServiceIten(serviceName: NuvolsCoreMockData.gerarPalavra(tamanho: 8)),
               ],
             ),
           ),

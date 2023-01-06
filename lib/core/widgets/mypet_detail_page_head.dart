@@ -81,9 +81,14 @@ class ScheduleButton extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.of(context).size.width * .65,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              "/scheduleRequestServicePageRoute",
+            );
+          },
           style: ElevatedButton.styleFrom(
-            primary: CustomColors.elevateButtonServiceScheduleOrange,
+            backgroundColor: CustomColors.elevateButtonServiceScheduleOrange,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
@@ -102,11 +107,7 @@ class ScheduleButton extends StatelessWidget {
                 SizedBox(width: 10),
                 Text(
                   "Agendar atendimento.",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                 ),
               ],
             ),

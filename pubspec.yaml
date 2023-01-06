@@ -14,6 +14,9 @@ dependencies:
 
   # Pacote para auxiliar a geração de logs no terminal
   logger: ^1.1.0
+  
+  # Pacote para caledário
+  calendar_timeline: ^1.1.0
 
   cupertino_icons: ^1.0.5
   cached_network_image: 3.2.1
