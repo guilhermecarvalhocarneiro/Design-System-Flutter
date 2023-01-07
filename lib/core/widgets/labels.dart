@@ -212,7 +212,7 @@ class TitleScheduleRequestServicePage extends StatelessWidget {
         child: Padding(
       padding: EdgeInsets.only(top: 12.0, bottom: 8),
       child: TituloSecao(
-        texto: "Escolha o dia que seja o atendimento",
+        texto: "Escolha o dia que deseja o atendimento",
       ),
     ));
   }

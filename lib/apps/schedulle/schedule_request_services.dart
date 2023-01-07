@@ -15,16 +15,14 @@ class ScheduleRequestServicePage extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(top: kToolbarHeight * .70, bottom: 55),
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: const CustomScrollView(
+          child: CustomScrollView(
             slivers: [
-              NuvolsPageHeader(
+              const NuvolsPageHeader(
                 titlePage: "Agendamento",
               ),
-              TitleScheduleRequestServicePage(),
-              // CustomCalendarTimeline(),
-              SliverToBoxAdapter(
-                child: CustomCleanCalendar(),
-              )
+              const TitleScheduleRequestServicePage(),
+              const CustomCleanCalendar(),
+              SliverFillRemaining(child: Container()),
             ],
           ),
         ),
