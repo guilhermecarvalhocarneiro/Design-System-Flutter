@@ -21,6 +21,7 @@ class ScheduleRequestServicePage extends StatelessWidget {
                 titlePage: "Agendamento",
               ),
               const TitleScheduleRequestServicePage(),
+              const CustomCalendarTimeline(),
               const CustomCleanCalendar(),
               SliverFillRemaining(child: Container()),
             ],

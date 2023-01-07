@@ -1,10 +1,11 @@
-import 'package:calendar_timeline/calendar_timeline.dart';
+
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:design_pinterest/core/nuvols_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
 
 import '../colors.dart';
+import 'custom_calendar_timeline/src/calendar_timeline.dart';
 
 /*
 Classs de calendário utilizando o package Calendar Timeline
@@ -34,19 +35,20 @@ class _CustomCalendarTimelineState extends State<CustomCalendarTimeline> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: CalendarTimeline(
-          initialDate: _selectedDate,
-          firstDate: DateTime.now(),
-          lastDate: DateTime.now().add(const Duration(days: 365 * 4)),
-          onDateSelected: (date) => setState(() => _selectedDate = date),
-          leftMargin: 12,
-          monthColor: CustomColors.scheduleCalendarMonthNameColor,
-          dayColor: CustomColors.scheduleCalendarDayUnselectedColor,
-          dayNameColor: const Color(0xFF333A47),
-          activeDayColor: Colors.white,
-          activeBackgroundDayColor: CustomColors.scheduleCalendarBackground,
-          selectableDayPredicate: (date) => date.day != 23,
-          locale: 'pt_BR',
-          showYears: true),
+        initialDate: _selectedDate,
+        firstDate: DateTime.now(),
+        lastDate: DateTime.now().add(const Duration(days: 365 * 4)),
+        onDateSelected: (date) => setState(() => _selectedDate = date),
+        leftMargin: 8,
+        monthColor: CustomColors.scheduleCalendarMonthNameColor,
+        dayColor: CustomColors.scheduleCalendarDayUnselectedColor,
+        dayNameColor: const Color(0xFF333A47),
+        activeDayColor: Colors.white,
+        activeBackgroundDayColor: CustomColors.scheduleCalendarBackground,
+        selectableDayPredicate: (date) => date.day != 23,
+        locale: 'pt_BR',
+        showYears: false,
+      ),
     );
   }
 }
@@ -238,7 +240,6 @@ class _CustomCleanCalendarState extends State<CustomCleanCalendar> {
   // Método responsável por criar o calendário customizado
   CleanCalendar buildCustomCleanCalendar() {
     return CleanCalendar(
-      
       startWeekday: WeekDay.monday,
       // Configurando a data inicial do calendário
       startDateOfCalendar: _currentDate,
