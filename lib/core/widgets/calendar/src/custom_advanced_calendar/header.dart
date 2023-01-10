@@ -14,7 +14,7 @@ class Header extends StatelessWidget {
       this.dateStyle,
       this.todayStyle,
       this.todayString = 'Today',
-      this.localeID = "en"})
+      this.localeID = "pt_BR"})
       : super(key: key);
 
   final String localeID;
@@ -27,6 +27,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting(localeID, null).then((value) => null);
     final dateFormatter = DateFormat.yMMMM(localeID);
     final theme = Theme.of(context);
 

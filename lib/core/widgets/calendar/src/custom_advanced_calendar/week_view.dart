@@ -66,6 +66,7 @@ class WeekView extends StatelessWidget {
                         date: '${date.day}',
                         isSelected: isSelected,
                         isToday: isToday,
+                        isHighlight: isHighlight,
                       ),
                     ],
                   ),

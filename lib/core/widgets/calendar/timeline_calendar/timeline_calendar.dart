@@ -4,7 +4,7 @@ URL: https://pub.dev/packages/calendar_timeline
 */
 import 'package:design_pinterest/core/colors.dart';
 import 'package:design_pinterest/core/nuvols_logger.dart';
-import 'package:design_pinterest/core/widgets/calendar/src/custom_timeline_calendar/src/calendar_timeline.dart';
+import 'package:design_pinterest/core/widgets/calendar/src/custom_timeline_calendar/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 
 class CustomCalendarTimeline extends StatefulWidget {

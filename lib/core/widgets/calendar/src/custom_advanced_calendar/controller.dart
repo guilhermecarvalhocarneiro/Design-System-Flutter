@@ -10,8 +10,7 @@ class AdvancedCalendarController extends ValueNotifier<DateTime> {
   AdvancedCalendarController.today() : this._(DateTime.now().toZeroTime());
 
   /// Generates controller with custom date selected.
-  AdvancedCalendarController.custom(DateTime dateTime)
-      : this._(dateTime.toZeroTime());
+  AdvancedCalendarController.custom(DateTime dateTime) : this._(dateTime.toZeroTime());
 
   @override
   set value(DateTime newValue) {
