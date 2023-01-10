@@ -1,4 +1,3 @@
-import 'package:design_pinterest/core/widgets/calendar/clean_calendar/clean_calendar.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/calendar/advanced_calendar/advanced_calendar.dart';
@@ -22,7 +21,6 @@ class ScheduleRequestServicePage extends StatelessWidget {
                 titlePage: "Agendamento",
               ),
               const TitleScheduleRequestServicePage(),
-              // const CustomCalendarTimeline(),
               const CustomAdvancedCalendar(),
               SliverFillRemaining(child: Container()),
             ],

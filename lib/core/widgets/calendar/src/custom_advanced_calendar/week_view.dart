@@ -42,8 +42,7 @@ class WeekView extends StatelessWidget {
             final isSelected = date.isAtSameMomentAs(selectedDate);
             final isHighlight = highlightMonth == date.month;
 
-            final hasEvent =
-                events!.indexWhere((element) => element.isSameDate(date));
+            final hasEvent = events!.indexWhere((element) => element.isSameDate(date));
 
             if (keepLineSize) {
               return InkResponse(
@@ -53,41 +52,21 @@ class WeekView extends StatelessWidget {
                   width: 32,
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? theme.primaryColor
+                        ? CustomColors.scheduleAdvancedCalendarDaySelectedBackgroundColor
                         : isToday
-                            ? theme.highlightColor
+                            ? CustomColors.scheduleAdvancedCalendarTodayBackground
                             : null,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(3.5),
                     shape: BoxShape.rectangle,
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        '${date.day}',
-                        style: textStyle?.copyWith(
-                          color: isSelected || isToday
-                              ? theme.colorScheme.onPrimary
-                              : isHighlight || highlightMonth == null
-                                  ? null
-                                  : theme.disabledColor,
-                          fontWeight:
-                              isSelected && textStyle?.fontWeight != null
-                                  ? FontWeight
-                                      .values[textStyle!.fontWeight!.index + 2]
-                                  : textStyle?.fontWeight,
-                        ),
+                      CustomDateAdvancedCalendarLabel(
+                        date: '${date.day}',
+                        isSelected: isSelected,
+                        isToday: isToday,
                       ),
-                      if (!hasEvent.isNegative)
-                        Container(
-                          height: 4,
-                          width: 4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: isSelected
-                                ? theme.colorScheme.onPrimary
-                                : theme.colorScheme.secondary,
-                          ),
-                        )
                     ],
                   ),
                 ),
@@ -117,15 +96,6 @@ class WeekView extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (!innerDot && !hasEvent.isNegative)
-                  Container(
-                    height: 6,
-                    width: 6,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: theme.primaryColor,
-                    ),
-                  )
               ],
             );
           },

@@ -4,7 +4,7 @@ part of 'widget.dart';
 class WeekDays extends StatelessWidget {
   const WeekDays({
     Key? key,
-    this.weekNames = const <String>['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    this.weekNames = const <String>['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
     this.style,
     required this.keepLineSize,
   })  : assert(weekNames.length == 7, '`weekNames` must have length 7'),
@@ -20,17 +20,21 @@ class WeekDays extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: style!,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: List.generate(weekNames.length, (index) {
-          return DateBox(
-            child: Text(weekNames[index]),
-          );
-        }),
-      ),
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: List.generate(weekNames.length, (index) {
+        return DateBox(
+          color: CustomColors.backgroundButtonOrange,
+          child: Text(
+            weekNames[index],
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 18,
+            ),
+          ),
+        );
+      }),
     );
   }
 }

@@ -31,6 +31,12 @@ class CustomColors {
   static const Color scheduleCalendarMonthNameColor = Color(0xff9FC9F3);
   static const Color scheduleCalendarDayUnselectedColor = Color(0xff9FC9F3);
   static const Color scheduleCalendarDaySelectedBackgroundColor = Colors.orangeAccent;
+  // Cores para o Advanced Calendar
+  static const Color scheduleAdvancedCalendarTodayBackground = Color(0xff9FC9F3);
+  static const Color scheduleAdvancedCalendarBackground = Color(0xff9FC9F3);
+  static const Color scheduleAdvancedCalendarMonthNameColor = Color(0xff9FC9F3);
+  static const Color scheduleAdvancedCalendarDayUnselectedColor = Color(0xff9FC9F3);
+  static const Color scheduleAdvancedCalendarDaySelectedBackgroundColor = Colors.orangeAccent;
 }
 
 class CustomBackgroundColors {

@@ -7,10 +7,12 @@ class DateBox extends StatelessWidget {
     required this.child,
     this.color,
     this.width = 24.0,
-    this.height = 24.0,
-    this.borderRadius = const BorderRadius.all(Radius.circular(8.0)),
+    this.height = 32.0,
+    this.borderRadius = const BorderRadius.all(Radius.circular(
+      4.0,
+    )),
     this.onPressed,
-    this.showDot = false,
+    this.showDot = true,
     this.isSelected = false,
     this.isToday = false,
     this.hasEvent = false,
@@ -46,14 +48,16 @@ class DateBox extends StatelessWidget {
   /// Show event in DateBox.
   final bool hasEvent;
 
+  // Cor padrão
+  final _selectedBackgroundDate = CustomColors.backgroundButtonOrange;
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return UnconstrainedBox(
       alignment: Alignment.center,
       child: InkResponse(
         onTap: onPressed,
-        radius: 16.0,
+        radius: 8.0,
         borderRadius: borderRadius,
         highlightShape: BoxShape.rectangle,
         child: AnimatedContainer(
@@ -62,10 +66,11 @@ class DateBox extends StatelessWidget {
           height: height,
           alignment: Alignment.center,
           decoration: BoxDecoration(
+            // Customizando o estilo do cabeçalho dos dias (S, S, T, Q, Q, S, S)
             color: isSelected
-                ? theme.primaryColor
+                ? _selectedBackgroundDate
                 : isToday
-                    ? theme.highlightColor
+                    ? _selectedBackgroundDate
                     : null,
             borderRadius: borderRadius,
           ),
@@ -80,9 +85,7 @@ class DateBox extends StatelessWidget {
                   width: 4,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: isSelected
-                        ? theme.colorScheme.onPrimary
-                        : theme.colorScheme.secondary,
+                    color: isSelected ? _selectedBackgroundDate : _selectedBackgroundDate,
                   ),
                 ),
             ],
