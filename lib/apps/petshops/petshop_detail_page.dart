@@ -1,8 +1,8 @@
 import 'package:design_pinterest/core/widgets/custom_backbuttom_head.dart';
 import 'package:flutter/material.dart';
 
-import '../core/widgets/petshop_detail_page_head.dart';
-import '../core/widgets/petshop_white_container.dart';
+import '../../core/widgets/petshop_detail_page_head.dart';
+import '../../core/widgets/petshop_white_container.dart';
 
 class PetShopDetailPage extends StatefulWidget {
   static const String routeName = "PetShopDetailPage";

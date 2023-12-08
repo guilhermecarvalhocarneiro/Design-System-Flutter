@@ -22,7 +22,7 @@ class PetShopHead extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 25,
+            height: 35,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -32,7 +32,10 @@ class PetShopHead extends StatelessWidget {
             ),
           ),
         ),
+        // const ScheduleButton(),
       ],
     );
   }
 }
+
+
